@@ -53,10 +53,10 @@ function buildNavBar(){
 // Add class 'active' to section when near top of viewport
 function addActiveClass(){
     for (section of sections){
-        const link = document.querySelector(`a[data-anchor="${section.id}"]`);
-        const viewableEl = section.getBoundingClientRect();
+        const link = document.querySelector(`a[data-anchor="${section.id}"]`); //to get the id of the section
+        const viewable = section.getBoundingClientRect();
 
-        if(viewableEl.top<= 335 && viewableEl.bottom >= 180){
+        if(viewable.top<= 335 && viewable.bottom >= 180){
             section.classList.add('your-active-class');
         } else {
             section.classList.remove('your-active-class');
